@@ -60,8 +60,8 @@ function App() {
   return (
     <main className=" z-[-2] h-screen w-screen p-4 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
       <div className=" flex  w-full items-center  h-full flex-col">
-        {result.map((el) => (
-          <div className="mt-10">
+        {result.map((el, index) => (
+          <div key={index} className="mt-10">
             <div className="overflow-y-scroll rounded-xl text-white p-4 bg-[#555] shadow-lg max-w-[500px]">
               <span className="font-bold text-sm uppercase">prompt:</span>{" "}
               {el.question}
