@@ -24,7 +24,7 @@ function App() {
 
     try {
       setLoading(true);
-      const { data } = await axios.post(`${BASE_URL}/get-related-data`, {
+      const { data } = await axios.post(`/api/get-related-data`, {
         query: promptValue,
       });
 
@@ -48,7 +48,7 @@ function App() {
 
     try {
       setFileUploadIsLoading(true);
-      const { data } = await axios.post(`${BASE_URL}/upload-file`, form);
+      const { data } = await axios.post(`/api/upload-file`, form);
 
       alert(data.message);
       setFile("");
