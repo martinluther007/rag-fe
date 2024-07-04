@@ -9,7 +9,7 @@ interface IResultObject {
   question?: string;
   answer?: string;
 }
-// const BASE_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [promptValue, setPromptValue] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -34,8 +34,9 @@ function App() {
       };
 
       setResult((prev) => [...prev, resultObject]);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      alert(error.response.data.message);
     } finally {
       setLoading(false);
     }
